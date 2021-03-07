@@ -5,20 +5,14 @@ import com.uniyaz.components.FooterLayout;
 import com.uniyaz.components.HeaderLayout;
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.Widgetset;
+import com.vaadin.server.Page;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.ui.*;
 
-/*
-*
-* @author Atilla Gökhan KARTAL
-* @since
-*
-*/
 @Theme("mytheme")
 @Widgetset("com.uniyaz.MyAppWidgetset")
 public class LayoutUI extends UI {
 
-    private String ali="5";
     private VerticalLayout mainLayout;
     private HeaderLayout headerLayout;
     private BodyLayout bodyLayout;
@@ -32,10 +26,20 @@ public class LayoutUI extends UI {
 
     private void buildMainLayout() {
 
+        final Page.Styles styles = Page.getCurrent().getStyles();
+
+        String css = ".layout-with-border {\n" +
+                "    border: 1px solid black;\n" +
+                "}";
+
+        styles.add(css);
+
         mainLayout = new VerticalLayout();
         mainLayout.setSizeFull();
 
         headerLayout = new HeaderLayout();
+        headerLayout.addStyleName("layout-with-border");
+
         mainLayout.addComponent(headerLayout);
         mainLayout.setExpandRatio(headerLayout,1f);
 
@@ -44,6 +48,8 @@ public class LayoutUI extends UI {
         mainLayout.setExpandRatio(bodyLayout,8f);
 
         footerLayout = new FooterLayout();
+        footerLayout.addStyleName("layout-with-border");
+
         mainLayout.addComponent(footerLayout);
         mainLayout.setExpandRatio(footerLayout,1f);
 

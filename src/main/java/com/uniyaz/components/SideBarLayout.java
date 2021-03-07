@@ -13,6 +13,7 @@ public class SideBarLayout extends VerticalLayout {
 
         setSizeFull();
 
+        addStyleName("layout-with-border");
         Label sidebar = new Label("SIDEBAR");
         sidebar.addStyleName(ValoTheme.LABEL_LARGE);
         sidebar.addStyleName(ValoTheme.LABEL_BOLD);

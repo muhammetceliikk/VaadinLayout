@@ -10,6 +10,7 @@ public class ContentLayout extends VerticalLayout {
 
         setSizeFull();
         contentLabel=new Label("CONTENT");
+        addStyleName("layout-with-border");
         contentLabel.addStyleName(ValoTheme.LABEL_LARGE);
         contentLabel.addStyleName(ValoTheme.LABEL_BOLD);
         contentLabel.addStyleName(ValoTheme.LABEL_H4);
