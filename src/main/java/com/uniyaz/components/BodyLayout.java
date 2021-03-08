@@ -14,8 +14,8 @@ public class BodyLayout extends HorizontalLayout {
         contentLayout=new ContentLayout();
         addComponent(contentLayout);
 
-        setExpandRatio(sideBarLayout,3f);
-        setExpandRatio(contentLayout,7f);
+        setExpandRatio(sideBarLayout,2f);
+        setExpandRatio(contentLayout,8f);
     }
 
     public SideBarLayout getSideBarLayout() {
